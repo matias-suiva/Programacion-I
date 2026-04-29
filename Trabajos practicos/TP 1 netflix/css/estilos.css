@@ -13,9 +13,11 @@ body {
      100vh equivalente al 100% de la altura de la ventana grafica*/
     height: 100vh;
     /*fondo de imagen de la casa de papel*/
-    background-image: url('../img/fondo.jpg');
+    background-image: url(../img/fondo.jpg);
     /*ajustamos la imagen para cubrir toda la pantalla sin distorsionarla*/
+    background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
     /*color del texto*/
     color: #fff;
     /*fuente de netflix*/
@@ -23,6 +25,7 @@ body {
     /* espacio entre elementos*/
     gap: 20px;
     }
+    
 .titulo {
     /*tamaño de la fuente*/
     font-size: 2.5em;
@@ -31,18 +34,33 @@ body {
     /*sombra para dar profundidad al texto*/
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
-     
-img {
+.contenedor {
+    /*padding para dar espacio interno*/
+    padding: 20px;
+    height: 400px;
+    width: 700px;
+    background-color: rgba(87, 74, 74, 0.295); /* Fondo semitransparente para mejorar la legibilidad */
+    /*activamos flexbox para centrar el contenido*/
+    display: flex;
+    /*centramos horizontalmente*/
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
+    /*espacio entre elementos*/
+    gap: 20px;
+}   
+img {
+    /*centrar la imagen*/
+     display: block;
+     margin: 0 auto;
+    justify-content: center;
     /*tamaño de la imagen*/
     width: 250px;
     /*borde redondeado*/
-     border-radius: 10px;
+     border-radius: 20px;
     /*sombra para dar profundidad*/
     box-shadow: 0 4px 8px rgba(250, 0, 0, 0.6); 
 }
-p {
+.parrafo {
     /*tamaño de la fuente*/
     font-size: 1.2em;
     /*color del texto*/
