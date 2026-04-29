@@ -1,0 +1,55 @@
+body {
+    /* Eliminamos margenes por defecto del navegador */
+    margin: 0;
+    /*activamos flexbox para centrar el contenido*/
+    display: flex;
+    /*cambiamos la direccion a columna */
+    flex-direction: column;
+    /*centramos horizontalmente*/
+    align-items: center;
+    /*centramos verticalmente*/
+    justify-content: center;
+    /*altura total de la pantalla, necesario para centrar verticalmente un valor de
+     100vh equivalente al 100% de la altura de la ventana grafica*/
+    height: 100vh;
+    /*fondo de imagen de la casa de papel*/
+    background-image: url('../img/fondo.jpg');
+    /*ajustamos la imagen para cubrir toda la pantalla sin distorsionarla*/
+    background-size: cover;
+    /*color del texto*/
+    color: #fff;
+    /*fuente de netflix*/
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    /* espacio entre elementos*/
+    gap: 20px;
+    }
+.titulo {
+    /*tamaño de la fuente*/
+    font-size: 2.5em;
+    /*color rojo caracteristico de netflix*/
+    color: rgb(255, 255, 255);
+    /*sombra para dar profundidad al texto*/
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+     
+img {
+    justify-content: center;
+    align-items: center;
+    /*tamaño de la imagen*/
+    width: 250px;
+    /*borde redondeado*/
+     border-radius: 10px;
+    /*sombra para dar profundidad*/
+    box-shadow: 0 4px 8px rgba(250, 0, 0, 0.6); 
+}
+p {
+    /*tamaño de la fuente*/
+    font-size: 1.2em;
+    /*color del texto*/
+    color: #fff;
+    /*sombra para dar profundidad al texto*/
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    width: 600px;
+    /*centrar el texto*/
+    text-align: center;
+}
