@@ -1,0 +1,114 @@
+body{
+    background-color: #d4c3b4;
+    /* Eliminamos margenes por defecto del navegador */
+    margin: 0;
+    /*activamos flexbox para centrar el contenido*/
+    display: flex;
+    /*cambiamos la direccion a columna */
+    flex-direction: column;
+    /*centramos horizontalmente*/
+    align-items: center;
+    /*color del texto*/
+    color: #333;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    gap: 20px;
+}
+header {
+    /*color del texto*/
+    color: #ff9215;
+    /*padding para dar espacio interno*/
+    padding: 20px;
+    /*activamos flexbox para centrar el contenido*/
+    display: flex;
+    /*centramos horizontalmente*/
+    justify-content: center;
+
+}
+h1 {
+    /*color del texto*/
+    color: #ff9215;
+    /*tamaño de la fuente*/
+    font-size: 2.5em;
+    /*sombra para dar profundidad al texto*/
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    
+}
+nav ul {
+    /*eliminamos los puntos de la lista*/
+    list-style: none;
+    /*activamos flexbox para centrar el contenido*/
+    display: flex;
+    /*espacio entre elementos*/
+    gap: 20px;
+}
+nav ul li a {
+    /*color del texto*/
+    color: #ffa41b;
+    /*sin subrayado*/
+    text-decoration: none;
+    /*tamaño de la fuente*/
+    font-size: 1.2em;
+    /*sombra para dar profundidad al texto*/
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+nav ul li a:hover {
+    /*color del texto al pasar el mouse*/
+    color: #ffeb3b;
+    /*sombra para dar profundidad al texto*/
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+main {
+    /*padding para dar espacio interno*/
+    padding: 20px;
+    /*activamos flexbox para centrar el contenido*/
+    display: flex;
+    /*cambiamos la direccion a columna */
+    flex-direction: column;
+    /*centramos horizontalmente*/
+    align-items: center;
+}
+section {
+    /*padding para dar espacio interno*/
+    padding: 20px;
+    /*activamos flexbox para centrar el contenido*/
+    display: flex;
+    /*cambiamos la direccion a columna */
+    flex-direction: column;
+    /*centramos horizontalmente*/
+    align-items: center;
+}
+section#inicio {
+    /*color del texto*/
+    color: #fff;
+    /*fuente de netflix*/
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    /* espacio entre elementos*/
+    gap: 20px;
+}
+section#historia {
+    /*color del texto*/
+    color: #fff;
+    /*fuente de netflix*/
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    /* espacio entre elementos*/
+    gap: 20px;
+}
+section#productos {
+    display: flex;
+    flex-wrap: wrap;
+    /*color del texto*/
+    color: #fff;
+    /*fuente de netflix*/
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    /* espacio entre elementos*/
+    gap: 20px;
+}
+
+section#contenidoMultimdia {
+    /*color del texto*/
+    color: #fff;
+    /*fuente de netflix*/
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    /* espacio entre elementos*/
+    gap: 20px;
+}

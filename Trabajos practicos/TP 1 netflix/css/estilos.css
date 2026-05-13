@@ -60,6 +60,12 @@ img {
     /*sombra para dar profundidad*/
     box-shadow: 0 4px 8px rgba(250, 0, 0, 0.6); 
 }
+img:hover {
+    /*efecto de zoom al pasar el mouse*/
+    transform: scale(1.1);
+    /*transicion suave para el efecto de zoom*/
+    transition: transform 0.3s ease;
+}
 .parrafo {
     /*tamaño de la fuente*/
     font-size: 1.2em;
