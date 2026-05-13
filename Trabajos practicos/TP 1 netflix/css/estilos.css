@@ -27,18 +27,22 @@ body {
     }
     
 .titulo {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     /*tamaño de la fuente*/
-    font-size: 2.5em;
+    font-size: 3em;
     /*color rojo caracteristico de netflix*/
     color: rgb(255, 255, 255);
     /*sombra para dar profundidad al texto*/
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 .contenedor {
+    position : relative;
+    border: 2px solid rgba(255, 255, 255, 0.5); /* Borde semitransparente para resaltar el contenedor */
+
     /*padding para dar espacio interno*/
     padding: 20px;
-    height: 400px;
-    width: 700px;
+    height: 600px;
+    width: 900px;
     background-color: rgba(87, 74, 74, 0.295); /* Fondo semitransparente para mejorar la legibilidad */
     /*activamos flexbox para centrar el contenido*/
     display: flex;
@@ -47,33 +51,71 @@ body {
     justify-content: center;
     /*espacio entre elementos*/
     gap: 20px;
-}   
+}
+.caja1 {
+    position: relative;
+    /*sombra para mejorar la legibilidad del texto sobre el fondo*/
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+    /*alineacion del texto al centro*/
+    text-align: center;
+    /*espacio entre lineas para mejorar la legibilidad*/
+    line-height: 1.5;
+}
+.caja2 {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 380px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.65);
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+.caja3 {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 380px;
+    padding: 20px;
+    background-color: rgba(255, 0, 0, 0.7);
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
 img {
-    /*centrar la imagen*/
-     display: block;
-     margin: 0 auto;
-    justify-content: center;
+    /*centramos la imagen dentro del contenedor*/
+    display: block;
+    margin: 0 auto;
     /*tamaño de la imagen*/
-    width: 250px;
-    /*borde redondeado*/
-     border-radius: 20px;
-    /*sombra para dar profundidad*/
-    box-shadow: 0 4px 8px rgba(250, 0, 0, 0.6); 
+    width: 400px;
+    height: auto;
+    /*borde redondeado para dar un aspecto mas suave*/
+    border-radius: 10px;
 }
 img:hover {
-    /*efecto de zoom al pasar el mouse*/
+    /*efecto de zoom al pasar el mouse sobre la imagen*/
     transform: scale(1.1);
-    /*transicion suave para el efecto de zoom*/
-    transition: transform 0.3s ease;
 }
 .parrafo {
     /*tamaño de la fuente*/
     font-size: 1.2em;
-    /*color del texto*/
-    color: #fff;
-    /*sombra para dar profundidad al texto*/
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-    width: 600px;
-    /*centrar el texto*/
+    /*color blanco para el texto*/
+    color: rgb(255, 255, 255);
+    /*sombra para mejorar la legibilidad del texto sobre el fondo*/
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+    /*alineacion del texto al centro*/
     text-align: center;
+    /*espacio entre lineas para mejorar la legibilidad*/
+    line-height: 1.5;
+}
+.parrafo2 {
+    /*tamaño de la fuente*/
+    font-size: 1.2em;
+    /*color blanco para el texto*/
+    color: rgb(255, 255, 255);
+    /*sombra para mejorar la legibilidad del texto sobre el fondo*/
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+    /*alineacion del texto al centro*/
+    text-align: center;
+    /*espacio entre lineas para mejorar la legibilidad*/
+    line-height: 1.5;
 }
