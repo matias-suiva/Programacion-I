@@ -19,7 +19,7 @@ nav {
     justify-content: center;
     align-items: center;
     padding: 10px 0;
-    z-index: 1000;
+    z-index: 10000; /* Asegura que esté delante de todo */
     font-family: 'Arial', sans-serif;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 }
@@ -30,6 +30,7 @@ nav ul {
     gap: 20px;
     margin: 0;
     padding: 0;
+    z-index: 10000; /* Asegura que la lista también esté delante */
 }
 
 nav ul li {
@@ -68,6 +69,7 @@ header {
     align-items: center;
     opacity: 0;
     animation: fadeIn 2s ease-in-out forwards;
+    z-index: 1; /* Asegura que esté detrás del nav */
 }
 h1 {
     color: rgb(255, 115, 0);
@@ -107,6 +109,106 @@ p2 {
     font-size: 3em;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
     animation: fadeIn 6s ease-in-out forwards;
+}
+#historia {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+}
+#texto {
+    color: rgb(255, 115, 0);
+    font-size: 2em;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 6s ease-in-out forwards;
+}
+#texto2 {
+    color: rgb(255, 115, 0);
+    font-size: 2em;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 6s ease-in-out forwards;
+}
+#texto3 {
+    color: rgb(255, 115, 0);
+    font-size: 2em;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 6s ease-in-out forwards;
+}
+#productos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+}
+#prod {
+    color: rgb(255, 115, 0);
+    font-size: 2em;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 6s ease-in-out forwards;
+}
+
+/* Estilos para la lista de productos */
+#productos ul {
+    list-style: none; /* Elimina los puntos negros */
+    padding: 0;
+    display: flex; /* Coloca los elementos en línea */
+    justify-content: space-around; /* Espaciado uniforme */
+    align-items: center;
+}
+
+#productos ul li {
+    margin: 0 20px; /* Agrega espacio entre las imágenes */
+}
+
+#productos ul img {
+    width: 180px; /* Aumenta el tamaño de las imágenes */
+    height: 180px; /* Aumenta el tamaño de las imágenes */
+}
+
+#productos ul img:hover {
+    transform: scale(1.1); /* Efecto de agrandamiento */
+}
+
+#contenidoMultimdia video {
+    border-radius: 15px; /* Bordes redondeados */
+    margin: 0 15px; /* Separación entre los videos */
+}
+#contenidoMultimdia audio {
+    margin: 5px 15px; /* Separación entre los audios */
+}
+#contenidoMultimdia {
+    display: flex;
+    justify-content: center; /* Coloca los videos uno al lado del otro */
+    align-items: center;
+    flex-wrap: wrap; /* Permite que los videos se ajusten si no hay espacio */
+}
+
+#mute-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 2rem; /* Hacer el botón más grande */
+    background-color: #ff7300;
+    color: white;
+    border: none;
+    border-radius: 50%; /* Botón circular */
+    width: 60px;
+    height: 60px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+#mute-button:hover {
+    transform: scale(1.1); /* Efecto de agrandamiento al pasar el mouse */
+    background-color: #ff5733;
 }
 
 @keyframes fadeIn {

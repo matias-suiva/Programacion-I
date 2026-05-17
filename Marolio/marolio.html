@@ -14,6 +14,11 @@
         <source src="vid/MarolioFabrica-16-seg_low.mp4" type="video/mp4">
         Tu navegador no soporta el elemento de video.
     </video>
+    <audio id="background-audio" autoplay loop>
+        <source src="aud/Marolio.mp3" type="audio/mpeg">
+        Tu navegador no soporta el elemento de audio.
+    </audio>
+
     <header> 
         <div class="contenedor">
             <h1>Marolio</h1>
@@ -25,6 +30,7 @@
                     <li><a href="#productos">Productos</a></li>
                     <li><a href="#contenidoMultimdia">Contenido Multimedia</a></li>
                 </ul>
+                <li><button id="mute-button">🔊</button></li>
             </nav>
         </div>
     </header>
@@ -37,20 +43,18 @@
 
         <section id="historia">
             <h2>Historia de Marolio</h2>
-            <p>Marolio fue fundada en 1950 por la familia Marolio en la ciudad de Buenos Aires. A lo largo de los años, la empresa ha crecido y se ha expandido, convirtiéndose en una de las marcas que mas sabor le da a tu vida.</p>
+            <p class="texto">Marolio fue fundada en 1950 por la familia Marolio en la ciudad de Buenos Aires. A lo largo de los años, la empresa ha crecido y se ha expandido, convirtiéndose en una de las marcas que mas sabor le da a tu vida.</p>
+            <p class="texto2">A lo largo de su historia, Marolio ha lanzado una amplia gama de productos, desde galletitas hasta aceites y arroz, siempre manteniendo un compromiso con la calidad y el sabor. La empresa ha sabido adaptarse a los cambios del mercado y a las necesidades de sus consumidores, consolidándose como una marca líder en el sector alimenticio.</p>
+            <p class="texto3">Hoy en día, Marolio sigue siendo una empresa familiar, con una fuerte presencia en el mercado argentino y una creciente expansión internacional. La marca continúa innovando y ofreciendo productos que satisfacen las necesidades de sus consumidores, manteniendo su compromiso con la calidad y el sabor que la caracteriza.</p>
         </section>
 
         <section id="productos">
-            <h2>Productos de Marolio</h2>
-            <ul>
-                <li>Galletitas</li>
-                <img src="img/Galletitas.png" alt="Galletitas Marolio" width="150" height="150">
-                <li>aceite</li>
-                <img src="img/Aceto-y-Vinagre.png" alt="Aceite Marolio" width="150" height="150">
-                <li>arroz</li>
-                <img src="img/Arroz.png" alt="Arroz Marolio" width="150" height="150">
-                <li>fideos</li>
-                <img src="img/Fideos.png" alt="Fideos Marolio" width="150" height="150">
+            <h2 class = "prod">Productos de Marolio</h2>
+            <ul id="productos-lista">
+                <li><img src="img/Galletitas.png" alt="Galletitas Marolio" width="150" height="150"></li>
+                <li><img src="img/Aceto-y-Vinagre.png" alt="Aceite Marolio" width="150" height="150"></li>
+                <li><img src="img/Arroz.png" alt="Arroz Marolio" width="150" height="150"></li>
+                <li><img src="img/Fideos.png" alt="Fideos Marolio" width="150" height="150"></li>
             </ul>
         </section>
 
@@ -75,9 +79,11 @@
     </main>
     <br>
     <hr>
-    <footer>
-        <img src="img\logo-marolio.png" alt="Logo de Marolio" width="30" height="30">
-        <p>&copy; 2024 Marolio. Todos los derechos reservados.</p>
+    <footer style="background-color: #33333333; color: white; text-align: center; padding: 20px 0;">
+        <div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
+            <img src="img\logo-marolio.png" alt="Logo de Marolio" width="40" height="40" style="border-radius: 50%;">
+            <p style="margin: 0; font-size: 1.2rem;">&copy; 2024 Marolio. Todos los derechos reservados.</p>
+        </div>
     </footer>
 </body>
 </html>
