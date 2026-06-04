@@ -18,7 +18,8 @@ h1{
 }
 .encendida{
     /* encendida */
-    filter: brightness(2) drop-shadow(0 0 20px #fbff00);
+    filter: brightness(2) 
+    drop-shadow(0 0 20px #fbff00);
 
 }
 .apagada{
