@@ -1,0 +1,33 @@
+body{
+    background-color: #000000;
+    color: #fbff00;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding-top: 20px;
+}
+h1{
+    margin-bottom: 20px;
+}
+.bombilla{
+    width: 150px;
+
+    /* apagada */
+    filter: brightness(0.2);
+
+    transition: 0.5s;
+}
+.encendida{
+    /* encendida */
+    filter: brightness(2);
+    drop-shadow: 0 0 20px #fbff00;
+
+}
+.apagada{
+    /* apagada */
+    filter: brightness(0.2);
+}
+.button{
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+}
