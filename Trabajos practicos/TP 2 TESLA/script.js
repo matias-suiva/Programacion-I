@@ -6,7 +6,7 @@ PRIMERA CLASE DE JAVASCRIPT
 FUNCION encenderBombilla()
 ==============================================
 - Al hacer click en el botón "Encender Bombilla", la imagen de la bombilla se debe cambiar a una bombilla encendida.
-- Al hacer click en el botón "Apagar Bombilla", la imagen de la bombilla se debe cambiar a una bombilla apagada.
+- Al hacer click en el botón nuevamente la imagen de la bombilla se debe cambiar a una bombilla apagada.
 ==============================================
 */
 function toggleBombilla() {
