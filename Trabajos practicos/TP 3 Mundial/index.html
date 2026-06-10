@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DT POR UN DIA</title>
+    
+    <link rel="stylesheet" href="estilos.css">
+
+</head>
+<body>
+    <h1>DT POR UN DIA</h1>
+    <P> registra tu candidatura para dirigir la selección argentina en el mundial 2026</P>
+    <div>
+        <form name="form1" id ="form1">
+
+            <label for="nombre">
+                Nombre completo:
+            </label>
+            <input 
+                type="text" 
+                id="nombre" 
+                placeholder="Ingrese su nombre completo"
+            >
+            <br>
+
+            <label for="email">
+                Correo electrónico
+            </label>
+
+            <input 
+                type="email" 
+                id="email" 
+                placeholder="Ingrese su correo electrónico"
+            >
+            <br>
+            <label for="capitan">
+                Capitán
+            </label>
+            <select id="capitan">
+                <option value="">
+                    Selecciona un capitán
+                </option>
+                <option value="messi">
+                    Messi
+                </option>
+                <option value="di maria">
+                    Di Maria
+                </option>
+                <option value="lautaro">
+                    Enzo Fernandez
+                </option>
+            </select>
+            <br>
+            <!-- Boton de accion final para enviar el formulario -->
+            <button type="button" onclick="registrarDT()">
+                ⚽Presentar Equipo⚽
+            </button>
+        </form>
+    </div>
+    <script src="script.js"></script>
+
+</body>
+</html>
