@@ -9,7 +9,7 @@ FUNCION encenderBombilla()
 - Al hacer click en el botón nuevamente la imagen de la bombilla se debe cambiar a una bombilla apagada.
 ==============================================
 */
-function toggleBombilla() {
+function Bombilla() {
     const bombilla = document.getElementById("bombilla");
 
     if (bombilla.classList.contains("encendida")) {
