@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>⚡ Generador de Luz - Laboratorio Tesla</title>
+  <link rel="stylesheet" href="estilo_rayo.css">
+</head>
+<body>
+  <div class="contenedor">
+    <h1>⚡ Generador de Luz Experimental</h1>
+    <p>Ingresá tu nombre y presioná el rayo para activar las bombillas de Tesla.</p>
+
+    <!-- Formulario de entrada -->
+    <form id="formularioTesla" onsubmit="return validarFormulario()">
+      <input type="text" id="nombre" placeholder="Tu nombre" required>
+      <input type="email" id="email" placeholder="Tu email" required>
+      <button type="submit" class="boton-formulario">Activar Tesla</button>
+    </form>
+
+    <!-- Rayo que funciona como interruptor -->
+    <div class="rayo-interruptor" onclick="encenderSistema()">
+      <div class="rayo">⚡</div>
+    </div>
+
+    <!-- Bombillas visuales -->
+    <div class="bombillas">
+      <img src="bombilla-encendida.png" class="bombilla" id="bombilla1" alt="Bombilla antigua">
+      <img src="bombilla-encendida.png" class="bombilla" id="bombilla2" alt="Bombilla antigua">
+      <img src="bombilla-encendida.png" class="bombilla" id="bombilla3" alt="Bombilla antigua">
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
