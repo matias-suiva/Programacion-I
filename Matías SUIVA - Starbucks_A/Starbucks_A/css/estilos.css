@@ -1,0 +1,241 @@
+/* en el root define variables de colores y estilos globales para el sitio web. para mantener la consistencia en el diseño y facilitar cambios futuros en la paleta de colores. */
+:root {
+    color-scheme: dark light;
+    --bg: #f4f7f3;
+    --surface: #ffffff;
+    --surface-strong: #e6f1ea;
+    --text: #10261d;
+    --text-muted: #526158;
+    --primary: #0f4d35;
+    --primary-soft: #14784d;
+    --accent: #d8e6d8;
+    --shadow: 0 18px 35px rgba(16, 38, 29, 0.12);
+}
+/* Estilos globales para todos los elementos, incluyendo el box-sizing y el comportamiento de desplazamiento suave. */
+* {
+    box-sizing: border-box;
+}
+/* desplazamiento suave para anclas y enlaces internos */
+html {
+    scroll-behavior: smooth;
+}
+/* estilos del cuerpo del documento, margenes, fuente, fondo y color de texto. */
+body {
+    margin: 0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, Verdana, sans-serif;
+    background: radial-gradient(circle at top, rgba(20, 120, 77, 0.28), rgba(104, 236, 122, 0.95) 35%, rgb(3, 20, 6) 70%), var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+}
+/* Estilos para el encabezado, color de texto, el degradado del background, alineación y relleno. */
+header {
+    background: linear-gradient(180deg, #0b4c2f 0%, #146247 100%);
+    color: #fff;
+    text-align: center;
+    padding: 3rem 1.5rem 3.5rem;
+    position: relative;
+}
+/* Pseudo-elemento para agregar un efecto de iluminación en el encabezado. */
+header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 20%, rgba(255, 255, 255, 0.18), transparent 35%);
+    opacity: 0.85;
+    pointer-events: none;
+}
+/* Asegura que todos los elementos dentro del encabezado tengan posición relativa para permitir el posicionamiento de elementos hijos. */
+header > * {
+    position: relative;
+}
+/* Estilos para el título principal del encabezado */
+header h1 {
+    margin: 0;
+    font-size: clamp(2.2rem, 4vw, 3.5rem);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+/* Estilos para el párrafo dentro del encabezado */
+header p {
+    margin: 1rem auto 0;
+    max-width: 42rem;
+    font-size: 1.05rem;
+    opacity: 0.92;
+}
+/* Estilos para el nav, incluyendo la disposición de los enlaces y el fondo. */
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    background: rgba(15, 77, 53, 0.96);
+    padding: 0.95rem 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+}
+/* Estilos para los enlaces dentro del nav */
+nav a {
+    color: #f8fcfa;
+    text-decoration: none;
+    font-weight: 700;
+    padding: 0.7rem 1.1rem;
+    border-radius: 999px;
+    transition: transform 250ms ease, background-color 250ms ease, color 250ms ease;
+}
+/* Estilos para los enlaces dentro del nav cuando se pasa el mouse sobre ellos */
+nav a:hover,
+nav a:focus-visible {
+    background-color: rgba(255, 255, 255, 0.18);
+    transform: translateY(-2px);
+}
+/* Estilos para el main, ancho máximo, centrado y relleno. */
+main {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 3rem;
+}
+/* Estilos para los encabezados h2, color, margen, alineación y tamaño de fuente adaptable. */
+h2 {
+    color: var(--primary);
+    margin: 0 0 1.4rem;
+    text-align: center;
+    font-size: clamp(1.75rem, 2.5vw, 2.3rem);
+}
+/* Estilos para el contenedor de productos, utilizando flexbox */
+.contenedor-productos {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+/* Estilos para cada artículo de producto */
+article {
+    background: var(--surface);
+    border-radius: 1.4rem;
+    box-shadow: var(--shadow);
+    padding: 1.6rem;
+    width: min(100%, 320px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 250ms ease, box-shadow 250ms ease;
+}
+/* Estilos para el artículo de producto cuando se pasa el mouse sobre él */
+article:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 22px 46px rgba(16, 38, 29, 0.18);
+}
+/* Estilos para las imágenes dentro de los artículos de producto */
+article img,
+article .producto-imagen {
+    width: 100%;
+    max-width: 240px;
+    border-radius: 1.2rem;
+    object-fit: cover;
+    margin-bottom: 1.2rem;
+    transition: transform 250ms ease, box-shadow 250ms ease;
+}
+/* Estilos para las imágenes dentro de los artículos de producto cuando se pasa el mouse sobre el artículo */
+article:hover img,
+article:hover .producto-imagen {
+    transform: scale(1.04);
+    box-shadow: 0 18px 34px rgba(0, 0, 0, 0.18);
+}
+
+/* Estilos para cabecera y productos */
+.logo {
+    width: 140px;
+    height: auto;
+    display: block;
+    margin: 0 auto 1.4rem;
+    border-radius: 1rem;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+/* Estilos para la sección de contacto */
+#contacto {
+    background: var(--surface-strong);
+    border: 1px solid rgba(15, 77, 53, 0.08);
+    border-radius: 1.4rem;
+    padding: 1.75rem;
+    margin-top: 3rem;
+}
+/* Estilos para el botón de información */
+#btnInfo {
+    background: linear-gradient(135deg, #0a5a36, #14784d);
+    color: #fff;
+    border: none;
+    border-radius: 999px;
+    padding: 0.95rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 200ms ease, box-shadow 200ms ease, background-color 200ms ease;
+}
+/* hoover del botón de información */
+#btnInfo:hover,
+#btnInfo:focus-visible {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 30px rgba(15, 77, 53, 0.24);
+    background-color: #0c663f;
+}
+/* Estilos para los encabezados h3 dentro de los artículos de producto */
+article h3 {
+    margin: 0 0 0.55rem;
+    font-size: 1.35rem;
+    color: var(--primary);
+}
+/* Estilos para los párrafos dentro de los artículos de producto */
+article p {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 1rem;
+}
+/* Estilos para la sección de contacto */
+#contacto {
+    background: var(--surface-strong);
+    border: 1px solid rgba(15, 77, 53, 0.08);
+    border-radius: 1.4rem;
+    padding: 1.75rem;
+    margin-top: 3rem;
+}
+/* Estilos para el encabezado h2 dentro de la sección de contacto */
+#contacto h2 {
+    margin-top: 0;
+}
+/* estilos del footer */
+footer {
+    text-align: center;
+    color: #637162;
+    padding: 1.5rem 1.5rem 2rem;
+    font-size: 0.95rem;
+}
+
+@media (max-width: 900px) /* Ajustes para pantallas medianas, como tablets y laptops */ {
+    .contenedor-productos {
+        justify-content: center;
+    } 
+
+    article {
+        width: min(100%, 420px);
+    }
+}
+
+@media (max-width: 650px) /* Ajustes para pantallas pequeñas, como móviles */ {
+    nav {
+        flex-direction: column;
+        gap: 0.75rem;
+        align-items: center;
+    }
+
+    header {
+        padding: 2.3rem 1rem 2.8rem;
+    }
+
+    .contenedor-productos {
+        gap: 1rem;
+    }
+}
