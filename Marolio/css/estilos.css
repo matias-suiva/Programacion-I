@@ -198,3 +198,73 @@ p2 {
     height: auto;
 }
 
+@media (max-width: 768px) {
+    nav {
+        padding: 10px 15px;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    nav ul li a {
+        font-size: 1rem;
+    }
+
+    .contenedor {
+        width: min(90%, 320px);
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: clamp(3rem, 10vw, 4.5rem);
+    }
+
+    h2 {
+        font-size: clamp(3rem, 12vw, 4rem);
+    }
+
+    p,
+    p2,
+    #texto,
+    #texto2,
+    #texto3,
+    #prod {
+        font-size: clamp(1rem, 4vw, 1.8rem);
+    }
+
+    #inicio,
+    #historia,
+    #productos {
+        padding: 30px 10px;
+        height: auto;
+    }
+
+    #productos ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    #productos ul li {
+        margin: 0;
+    }
+
+    #productos ul img {
+        width: 100%;
+        max-width: 280px;
+        height: auto;
+    }
+
+    #contenidoMultimdia {
+        flex-direction: column;
+    }
+
+    #contenidoMultimdia video,
+    #contenidoMultimdia audio {
+        max-width: 100%;
+    }
+}
+
