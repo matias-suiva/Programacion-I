@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mundial 2026</title>
+
+    <link rel="icon" href="img/favicon.ico" type="image/png">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+    <header>
+        <img src="img/logo.png" alt="Logo del mundial" class="logo">
+        <h1>FIFA World Cup</h1>
+        <p>Disfrutá el mejor fútbol del mundo</p>
+    </header>
+
+    <nav>
+        <a href="#inicio">Inicio</a>
+        <a href="#formulario">Formulario</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
+
+    <main id="inicio" class="inicio">
+        <div class="hero-content">
+            <img src="img/imgmessi.png" alt="Messi" class="messi-img">
+        </div>
+
+        <section id="formulario" class="panel formulario-seccion">
+            <h2>Registro de Director Técnico</h2>
+
+            <form id="formContacto">
+                <label for="nombre">Nombre y Apellido del director técnico:</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Ej: Lionel Scaloni" required>
+
+                <label for="email">Correo Electrónico:</label>
+                <input type="email" id="email" name="email" placeholder="Ej: dt@afa.com" required>
+
+                <label for="capitan">Capitán de la Selección:</label>
+                <select id="capitan" name="capitan" required>
+                    <option value="">Seleccione un futbolista</option>
+                    <option value="Emiliano Martínez">Emiliano Martínez</option>
+                    <option value="Nahuel Molina">Nahuel Molina</option>
+                    <option value="Cristian Romero">Cristian Romero</option>
+                    <option value="Nicolás Otamendi">Nicolás Otamendi</option>
+                    <option value="Nico Tagliafico">Nico Tagliafico</option>
+                    <option value="Rodrigo De Paul">Rodrigo De Paul</option>
+                    <option value="Enzo Fernández">Enzo Fernández</option>
+                    <option value="Alexis Mac Allister">Alexis Mac Allister</option>
+                    <option value="Ángel Di María">Ángel Di María</option>
+                    <option value="Lionel Messi">Lionel Messi</option>
+                    <option value="Julian Álvarez">Julian Álvarez</option>
+                    <option value="Lautaro Martínez">Lautaro Martínez</option>
+                </select>
+
+                <button type="submit">Registrar</button>
+            </form>
+        </section>
+
+        <section id="contacto" class="panel contacto-seccion">
+            <h2>Información</h2>
+            <button id="btnInfo" type="button">Información mundial</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>
+            © 2026 FIFA World Cup.<br>
+            Autor: Matías Suiva
+        </p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
