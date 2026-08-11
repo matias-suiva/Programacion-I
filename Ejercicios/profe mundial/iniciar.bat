@@ -28,6 +28,6 @@ echo.
 echo Abriendo el navegador...
 start http://127.0.0.1:5500
 echo.
-echo Podés cerrar esta ventana. Los servidores
+echo Podes cerrar esta ventana. Los servidores
 echo siguen corriendo en sus propias ventanas.
 pause
