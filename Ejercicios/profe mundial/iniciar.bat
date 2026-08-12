@@ -7,14 +7,14 @@ echo.
 
 :: Levantar el backend (Laravel) en una ventana aparte
 echo [1/2] Iniciando backend (Laravel) en http://127.0.0.1:8000 ...
-start "Backend - Laravel (puerto 8000)" cmd /k "cd /d %~dp0backend-mundial && php artisan serve"
+start "Backend - Laravel (puerto 8000)" cmd /k "cd /d %~dp0backend-mundial && "C:\php84\php.exe" artisan serve"
 
 :: Esperar 2 segundos para que el backend arranque primero
 timeout /t 2 /nobreak >nul
 
 :: Levantar el frontend en otra ventana aparte
 echo [2/2] Iniciando frontend en http://127.0.0.1:5500 ...
-start "Frontend - Mundial 2026 (puerto 5500)" cmd /k "cd /d %~dp0 && php -S 127.0.0.1:5500"
+start "Frontend - Mundial 2026 (puerto 5500)" cmd /k "cd /d %~dp0 && "C:\php84\php.exe" -S 127.0.0.1:5500"
 
 :: Esperar 1 segundo y abrir el navegador
 timeout /t 1 /nobreak >nul
