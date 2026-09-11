@@ -1,0 +1,117 @@
+/* Variables reutilizables de colores y medidas visuales */
+:root {
+	--verde: #087f73;
+	--verde-oscuro: #07564f;
+	--lima: #b9d85b;
+	--tinta: #192528;
+	--papel: #fffdf8;
+	--suave: #eef5f1;
+	--borde: #cad8d1;
+	--error: #b43b39;
+}
+
+/* Hace que los tamaños incluyan el padding y el borde */
+* { box-sizing: border-box; }
+
+/* Estilos generales de la página */
+body {
+	margin: 0;
+	color: var(--tinta);
+	background: radial-gradient(circle at top left, #75d8b9 0%, #9ed1b6 48%, #f7fbef 100%);
+	font-family: "Trebuchet MS", Verdana, sans-serif;
+	line-height: 1.5;
+}
+
+/* Hoja principal que contiene todo el formulario */
+.pagina {
+	width: min(100% - 32px, 900px);
+	margin: 32px auto;
+	background: var(--papel);
+	border-top: 8px solid var(--verde);
+	box-shadow: 0 14px 35px rgba(7, 86, 79, .12);
+}
+
+/* Distribución del encabezado institucional */
+.encabezado {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 24px;
+	padding: 28px 48px 22px;
+	border-bottom: 1px solid var(--borde);
+}
+
+.encabezado p { margin: 3px 0; font-size: .88rem; }
+.encabezado .instituto { font-weight: 700; font-size: 1.12rem; }
+.encabezado .materia { margin-top: 15px; color: var(--verde-oscuro); font-weight: 700; }
+.encabezado span, footer span { color: var(--lima); padding: 0 5px; }
+
+/* Cuadro visual con las iniciales del instituto */
+.marca {
+	display: grid;
+	place-items: center;
+	min-width: 92px;
+	aspect-ratio: 1;
+	color: white;
+	background: var(--verde);
+	font-weight: 700;
+	letter-spacing: 2px;
+	font-size: 1.35rem;
+}
+
+/* Área de título y presentación */
+.presentacion { padding: 42px 48px 24px; }
+.presentacion .etiqueta { margin: 0; color: var(--verde); font-size: .8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; }
+h1 { margin: 4px 0 10px; font-family: Georgia, serif; font-size: clamp(2rem, 5vw, 3.2rem); line-height: 1.1; }
+.presentacion p:last-child { max-width: 650px; margin: 0; color: #52615d; }
+
+/* Espaciado exterior del formulario */
+form { padding: 0 48px 42px; }
+/* Bordes y separación de cada grupo de campos */
+fieldset { margin: 0 0 22px; padding: 22px; border: 1px solid var(--borde); }
+legend { padding: 0 10px; color: var(--verde-oscuro); font-family: Georgia, serif; font-size: 1.15rem; font-weight: 700; }
+.campos-dobles { display: grid; grid-template-columns: 1fr; gap: 0; }
+.campo { display: grid; gap: 6px; margin-bottom: 18px; }
+.campo:last-child { margin-bottom: 0; }
+label, .subtitulo { font-weight: 700; font-size: .92rem; }
+/* Apariencia compartida de los controles de entrada */
+input[type="text"], input[type="email"], select, textarea {
+	width: 100%;
+	padding: 11px 13px;
+	border: 1px solid var(--borde);
+	border-radius: 2px;
+	color: var(--tinta);
+	background: white;
+	font: inherit;
+}
+textarea { resize: vertical; min-height: 130px; }
+input:focus, select:focus, textarea:focus { outline: 3px solid rgba(8, 127, 115, .2); border-color: var(--verde); }
+/* Alineación de checkbox y radio buttons */
+.check, .opciones label { display: flex; align-items: center; gap: 9px; margin: 12px 0; font-weight: 400; cursor: pointer; }
+input[type="checkbox"], input[type="radio"] { width: 17px; height: 17px; accent-color: var(--verde); }
+.opciones { display: grid; gap: 5px; margin-top: 22px; padding: 17px; background: var(--suave); }
+.opciones .subtitulo { margin-bottom: 3px; }
+/* Mensajes de error agregados por JavaScript */
+.error { min-height: 18px; color: var(--error); font-size: .78rem; }
+.invalido { border-color: var(--error) !important; }
+/* Botones de acción y mensajes de resultado */
+.acciones { display: flex; flex-wrap: wrap; gap: 12px; }
+button { padding: 12px 20px; border: 0; border-radius: 2px; color: white; background: var(--verde); font: 700 .9rem "Trebuchet MS", sans-serif; cursor: pointer; }
+button:hover { background: var(--verde-oscuro); }
+button.secundario { color: var(--verde-oscuro); background: transparent; border: 1px solid var(--verde); }
+.mensaje { margin: 16px 0 0; color: var(--error); font-weight: 700; }
+.mensaje.correcto { color: var(--verde-oscuro); }
+.resumen { padding: 0 48px 42px; }
+.resumen p { padding-bottom: 10px; border-bottom: 1px solid var(--borde); }
+.resumen a, .presentacion a { color: var(--verde-oscuro); font-weight: 700; }
+footer { padding: 18px 48px; color: white; background: var(--verde-oscuro); font-size: .8rem; }
+
+/* Adaptación para celulares y pantallas pequeñas */
+@media (max-width: 620px) {
+	.pagina { width: 100%; margin: 0; }
+	.encabezado, .presentacion, form { padding-left: 22px; padding-right: 22px; }
+	.encabezado { align-items: flex-start; }
+	.marca { min-width: 64px; font-size: .95rem; }
+	.campos-dobles { grid-template-columns: 1fr; gap: 0; }
+	.resumen, footer { padding-left: 22px; padding-right: 22px; }
+}

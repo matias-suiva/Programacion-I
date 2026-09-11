@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<!-- Configuración básica del documento y archivos externos -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Formulario de opinión sobre programación web">
+	<title>Formulario | Programación I</title>
+	<link rel="stylesheet" href="estilos.css">
+	<script src="script.js" defer></script>
+</head>
+<body>
+	<!-- Contenedor principal de toda la página -->
+	<main class="pagina">
+		<!-- Encabezado institucional del trabajo práctico -->
+		<header class="encabezado">
+			<div>
+				<p class="instituto">Instituto Superior ICOP Santa Fe</p>
+				<p class="materia">PROGRAMACIÓN I <span>•</span> Prof. Javier Fernando Imvinkelried</p>
+				<p class="alumno">Alumno: Suiva Matias</p>
+			</div>
+			<!-- Identificador visual del instituto -->
+			<div class="marca" aria-label="Identidad visual ICOP">ICOP</div>
+		</header>
+
+		<!-- Título y explicación breve del formulario -->
+		<section class="presentacion">
+			<p class="etiqueta">Trabajo práctico N.º 3</p>
+			<h1>Formulario de opinión</h1>
+			<p>Completá tus datos y contanos qué área de la programación web te interesa más.</p>
+		</section>
+
+		<!-- Formulario: envía los datos al archivo PHP mediante POST -->
+		<form id="formulario" action="backend.php" method="post" novalidate>
+			<!-- Grupo de controles para los datos personales -->
+			<fieldset>
+				<legend>Datos personales</legend>
+				<!-- Nombre y apellido se muestran uno debajo del otro -->
+				<div class="campos-dobles">
+					<div class="campo">
+						<label for="nombre">Nombre</label>
+						<input type="text" id="nombre" name="nombre" autocomplete="given-name">
+						<small class="error" id="error-nombre"></small>
+					</div>
+					<div class="campo">
+						<label for="apellido">Apellido</label>
+						<input type="text" id="apellido" name="apellido" autocomplete="family-name">
+						<small class="error" id="error-apellido"></small>
+					</div>
+				</div>
+				<!-- Campo para recibir el correo electrónico -->
+				<div class="campo">
+					<label for="email">Correo electrónico</label>
+					<input type="email" id="email" name="email" autocomplete="email" placeholder="nombre@ejemplo.com">
+					<small class="error" id="error-email"></small>
+				</div>
+			</fieldset>
+
+			<!-- Grupo de controles para las preferencias del usuario -->
+			<fieldset>
+				<legend>Preferencias</legend>
+				<!-- Lista desplegable de sistemas operativos -->
+				<div class="campo">
+					<label for="sistema">Sistema operativo favorito</label>
+					<select id="sistema" name="sistema">
+						<option value="">Seleccioná una opción</option>
+						<option value="Windows">Windows</option>
+						<option value="Linux">Linux</option>
+						<option value="macOS">macOS</option>
+						<option value="Otro">Otro</option>
+					</select>
+					<small class="error" id="error-sistema"></small>
+				</div>
+				<!-- Casilla de verificación: puede quedar marcada o desmarcada -->
+				<label class="check">
+					<input type="checkbox" id="experiencia" name="experiencia" value="Sí">
+					<span>Tengo experiencia en programación web</span>
+				</label>
+				<!-- Botones de opción: permiten elegir una sola alternativa -->
+				<div class="opciones">
+					<span class="subtitulo">¿Qué te gusta más?</span>
+					<label><input type="radio" name="interes" value="Análisis y diseño"> Análisis y diseño</label>
+					<label><input type="radio" name="interes" value="Programación"> Programación</label>
+					<small class="error" id="error-interes"></small>
+				</div>
+			</fieldset>
+
+			<!-- Grupo de controles para el comentario libre -->
+			<fieldset>
+				<legend>Comentario</legend>
+				<div class="campo">
+					<label for="comentario">Compartí tu opinión</label>
+					<textarea id="comentario" name="comentario" rows="6" placeholder="Escribí tu comentario..."></textarea>
+					<small class="error" id="error-comentario"></small>
+				</div>
+			</fieldset>
+
+			<!-- Botones para enviar o limpiar el formulario -->
+			<div class="acciones">
+				<button type="submit">Enviar formulario</button>
+				<button type="reset" class="secundario">Restablecer</button>
+			</div>
+			<p id="mensaje" class="mensaje" role="alert" aria-live="polite"></p>
+		</form>
+
+		<!-- Pie de página -->
+		<footer>Programación I <span>•</span> Formulario web</footer>
+	</main>
+</body>
+</html>
