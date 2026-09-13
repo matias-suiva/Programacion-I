@@ -1,33 +1,39 @@
 // Espera a que la página termine de cargar antes de buscar sus elementos.
 window.onload = function () {
+	// Busca el formulario para poder controlar su envío.
 	const formulario = document.getElementById("formulario");
-	const mensaje = document.getElementById("mensaje");
 
-	// Intercepta el envío para validar los datos antes de llamar al PHP.
+	// Ejecuta las validaciones cuando el usuario intenta enviar el formulario.
 	formulario.addEventListener("submit", function (evento) {
+		// Evita que el navegador envíe el formulario automáticamente.
 		evento.preventDefault();
+		// Borra los mensajes y estilos de error de un intento anterior.
 		limpiarErrores();
 
+		// Obtiene los campos de texto, la lista desplegable y el área de comentario.
 		const apellido = document.getElementById("apellido");
 		const nombre = document.getElementById("nombre");
 		const email = document.getElementById("email");
 		const sistema = document.getElementById("sistema");
 		const comentario = document.getElementById("comentario");
+		// Obtiene la opción de interés seleccionada, si existe.
 		const interes = document.querySelector('input[name="interes"]:checked');
-		// Expresión regular básica: texto@texto.dominio
+		// Define una expresión regular para comprobar el formato del correo.
 		const emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+		// Supone que el formulario es válido hasta encontrar un error.
 		let formularioValido = true;
 
-		// Comprueba que apellido y nombre no estén vacíos.
+		// Comprueba que se haya escrito un apellido.
 		if (apellido.value.trim() === "") {
 			mostrarError(apellido, "Ingresá tu apellido.");
 			formularioValido = false;
 		}
+		// Comprueba que se haya escrito un nombre.
 		if (nombre.value.trim() === "") {
 			mostrarError(nombre, "Ingresá tu nombre.");
 			formularioValido = false;
 		}
-		// Comprueba que el correo exista y tenga un formato válido.
+		// Comprueba que el correo no esté vacío y tenga un formato válido.
 		if (email.value.trim() === "") {
 			mostrarError(email, "Ingresá tu correo electrónico.");
 			formularioValido = false;
@@ -35,49 +41,41 @@ window.onload = function () {
 			mostrarError(email, "Ingresá un correo electrónico válido.");
 			formularioValido = false;
 		}
-		// Comprueba que se haya elegido una opción de la lista.
+		// Comprueba que se haya elegido un sistema operativo.
 		if (sistema.value === "") {
 			mostrarError(sistema, "Seleccioná un sistema operativo.");
 			formularioValido = false;
 		}
-		// Comprueba que se haya seleccionado uno de los radio buttons.
+		// Comprueba que se haya seleccionado una opción de interés.
 		if (!interes) {
 			document.getElementById("error-interes").textContent = "Elegí una opción.";
 			formularioValido = false;
 		}
-		// Comprueba que el área de comentario tenga contenido.
+		// Comprueba que el usuario haya escrito un comentario.
 		if (comentario.value.trim() === "") {
 			mostrarError(comentario, "Escribí un comentario.");
 			formularioValido = false;
 		}
 
-		// Si todo está correcto, envía los datos al servidor PHP.
+		// Envía el formulario solamente si todas las validaciones fueron correctas.
 		if (formularioValido) {
-			mensaje.className = "mensaje correcto";
-			mensaje.textContent = "Datos correctos. Enviando formulario...";
 			formulario.submit();
-		} else {
-			mensaje.textContent = "Revisá los campos marcados antes de enviar.";
 		}
 	});
 
-	// Limpia los errores cuando se presiona el botón Restablecer.
-	formulario.addEventListener("reset", function () {
-		limpiarErrores();
-		mensaje.textContent = "";
-	});
-
-	// Marca visualmente un campo y escribe su mensaje de error.
+	// Muestra un mensaje de error y marca visualmente el campo indicado.
 	function mostrarError(campo, texto) {
 		campo.classList.add("invalido");
 		document.getElementById("error-" + campo.id).textContent = texto;
 	}
 
-	// Quita todos los mensajes y marcas de error anteriores.
+	// Limpia todos los mensajes y marcas de error antes de validar nuevamente.
 	function limpiarErrores() {
+		// Vacía el texto de cada elemento destinado a mostrar errores.
 		document.querySelectorAll(".error").forEach(function (elemento) {
 			elemento.textContent = "";
 		});
+		// Quita la clase que resalta los campos inválidos.
 		document.querySelectorAll(".invalido").forEach(function (elemento) {
 			elemento.classList.remove("invalido");
 		});

@@ -84,6 +84,7 @@ input[type="text"], input[type="email"], select, textarea {
 	background: white;
 	font: inherit;
 }
+#nombre { text-transform: uppercase; }
 textarea { resize: vertical; min-height: 130px; }
 input:focus, select:focus, textarea:focus { outline: 3px solid rgba(8, 127, 115, .2); border-color: var(--verde); }
 /* Alineación de checkbox y radio buttons */
@@ -94,13 +95,11 @@ input[type="checkbox"], input[type="radio"] { width: 17px; height: 17px; accent-
 /* Mensajes de error agregados por JavaScript */
 .error { min-height: 18px; color: var(--error); font-size: .78rem; }
 .invalido { border-color: var(--error) !important; }
-/* Botones de acción y mensajes de resultado */
+/* Botones de acción */
 .acciones { display: flex; flex-wrap: wrap; gap: 12px; }
 button { padding: 12px 20px; border: 0; border-radius: 2px; color: white; background: var(--verde); font: 700 .9rem "Trebuchet MS", sans-serif; cursor: pointer; }
 button:hover { background: var(--verde-oscuro); }
 button.secundario { color: var(--verde-oscuro); background: transparent; border: 1px solid var(--verde); }
-.mensaje { margin: 16px 0 0; color: var(--error); font-weight: 700; }
-.mensaje.correcto { color: var(--verde-oscuro); }
 .resumen { padding: 0 48px 42px; }
 .resumen p { padding-bottom: 10px; border-bottom: 1px solid var(--borde); }
 .resumen a, .presentacion a { color: var(--verde-oscuro); font-weight: 700; }
