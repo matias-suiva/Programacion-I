@@ -215,39 +215,40 @@ function mostrar_estado($paginaActual, $pagina, $texto)
         /* box-sizing facilita calcular el ancho real de los elementos. */
         * { box-sizing: border-box; }
         /* Estilos generales de la pagina y del texto. */
-        body { margin: 0; background: #e9e9e9; color: #222; font-family: Arial, sans-serif; }
+        body { margin: 0; background: #e9e9e9; color: #222; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
         /* .telefono representa el marco de celular del wireframe. */
-        .telefono { width: 390px; min-height: 760px; margin: 20px auto; background: #fff; border: 1px solid #555; border-radius: 34px; overflow: hidden; display: flex; flex-direction: column; }
+        .telefono { width: 100%; max-width: 420px; min-height: 100vh; margin: 0 auto; background: #fff; border: 1px solid #555; border-radius: 32px; overflow: hidden; box-shadow: 0 8px 32px rgba(0,0,0,0.15); display: flex; flex-direction: column; }
+        @media (max-width: 430px) { .telefono { width: 100%; min-height: 100vh; margin: 0; border: 0; border-radius: 0; box-shadow: none; } }
         /* main ocupa el espacio central entre contenido y navegacion. */
         main { flex: 1; padding: 34px 28px 24px; }
         /* Clases visuales de la marca y del encabezado. */
-        .marca { text-align: center; }
-        .auto { font-size: 52px; line-height: 1; margin-bottom: 12px; }
-        h1 { margin: 0; font-size: 34px; font-weight: 400; letter-spacing: 2px; }
-        .subtitulo { margin: 8px 0 26px; font-size: 14px; letter-spacing: 1px; }
-        .linea { width: 80px; border-top: 3px solid #222; margin: 0 auto 28px; }
+        .marca { text-align: center; padding: 20px 0; }
+        .auto { font-size: 48px; line-height: 1; margin-bottom: 8px; }
+        h1 { margin: 0; font-size: 32px; font-weight: 400; letter-spacing: 1px; }
+        .subtitulo { margin: 6px 0 20px; font-size: 13px; letter-spacing: 1px; }
+        .linea { width: 60px; border-top: 2px solid #222; margin: 0 auto 22px; }
         /* Tarjeta que muestra el dinero disponible. */
-        .saldo { border: 1px solid #555; border-radius: 16px; padding: 22px 12px; text-align: center; margin-bottom: 26px; }
-        .saldo strong { display: block; font-size: 18px; font-weight: 400; margin-bottom: 10px; }
-        .monto { font-size: 42px; letter-spacing: 2px; }
+        .saldo { border: 1px solid #555; border-radius: 16px; padding: 20px 16px; text-align: center; margin-bottom: 24px; background: #f8f8f8; }
+        .saldo strong { display: block; font-size: 17px; font-weight: 400; margin-bottom: 8px; color: #222; }
+        .monto { font-size: 38px; letter-spacing: 1px; color: #222; }
         /* Estilos compartidos por botones y enlaces con apariencia de boton. */
-        .boton, .enlace-boton { display: block; width: 100%; padding: 17px 14px; border: 1px solid #333; border-radius: 11px; background: #f1f1f1; color: #222; text-align: center; text-decoration: none; font-size: 17px; cursor: pointer; }
-        .principal { background: #d5d5d5; margin-bottom: 14px; }
-        .secundario { margin-top: 12px; }
-        .mensaje { padding: 12px; border: 1px solid #777; border-radius: 8px; margin-bottom: 18px; text-align: center; font-size: 14px; }
+        .boton, .enlace-boton { display: block; width: 100%; padding: 15px 12px; border: 1px solid #333; border-radius: 10px; background: #f1f1f1; color: #222; text-align: center; text-decoration: none; font-size: 16px; cursor: pointer; }
+        .principal { background: #d5d5d5; margin-bottom: 12px; }
+        .secundario { margin-top: 8px; }
+        .mensaje { padding: 10px; border: 1px solid #777; border-radius: 8px; margin-bottom: 16px; text-align: center; font-size: 13px; background: #fafafa; }
         /* .tarjeta agrupa formularios e informacion relacionada. */
-        .tarjeta { border: 1px solid #777; border-radius: 12px; padding: 18px; margin-bottom: 18px; }
+        .tarjeta { border: 1px solid #777; border-radius: 12px; padding: 20px; margin-bottom: 20px; background: #fafafa; }
         .boton-pequeno { padding: 12px; font-size: 15px; margin-top: 18px; }
         label { display: block; margin: 14px 0 7px; font-size: 14px; }
-        input { width: 100%; padding: 12px; border: 1px solid #555; border-radius: 7px; font-size: 16px; text-transform: uppercase; }
+        input { width: 100%; padding: 10px; border: 1px solid #555; border-radius: 6px; font-size: 15px; text-transform: uppercase; margin-bottom: 8px; }
         .lista { padding-left: 20px; line-height: 2; }
         h2 { font-size: 24px; font-weight: 400; margin-top: 0; }
-        .volver { display: inline-block; margin-bottom: 20px; color: #222; }
+        .volver { display: inline-block; margin-bottom: 16px; color: #222; font-size: 13px; text-decoration: none; border-bottom: 1px dashed #555; padding-bottom: 4px; }
         /* La navegacion inferior se divide en cuatro enlaces iguales. */
-        nav { display: flex; border-top: 1px solid #555; background: #fafafa; }
-        .nav-item { flex: 1; padding: 14px 3px 12px; color: #333; text-decoration: none; text-align: center; font-size: 11px; }
-        .nav-item::first-line { font-size: 22px; }
-        .nav-item.activo { font-weight: bold; background: #e5e5e5; }
+        nav { display: flex; border-top: 1px solid #555; background: #fafafa; padding: 6px 0; }
+        .nav-item { flex: 1; padding: 12px 2px; color: #333; text-decoration: none; text-align: center; font-size: 12px; font-weight: 500; }
+        .nav-item::first-line { font-size: 16px; }
+        .nav-item.activo { font-weight: bold; background: #e5e5e5; color: #222; }
         /* En pantallas angostas, el marco ocupa todo el ancho disponible. */
         @media (max-width: 430px) { .telefono { width: 100%; min-height: 100vh; margin: 0; border: 0; border-radius: 0; } }
     </style>
