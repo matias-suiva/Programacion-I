@@ -6,13 +6,13 @@ const CANVAS_HEIGHT = 600;
 canvas.width = CANVAS_WIDTH;
 canvas.height = CANVAS_HEIGHT;
 
-const GRAVITY = 0.01;
+const GRAVITY = 0.5;
 const JUMP_FORCE = -7;
 const PIPE_WIDTH = 70;
 const PIPE_GAP = 160;
 const BASE_PIPE_SPEED = 1.5;
 const MAX_PIPE_SPEED = 5;
-const PIPE_SPAWN_INTERVAL = 1600;
+const PIPE_SPAWN_INTERVAL = 1800;
 
 let bird = {
     x: 80,
