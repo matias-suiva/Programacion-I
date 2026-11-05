@@ -1,0 +1,242 @@
+/* ==========================================================================
+   Layout & 16:9 Stage Architecture
+   ========================================================================== */
+
+/* Fullscreen App Shell */
+.app-shell {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  user-select: none;
+}
+
+/* 16:9 Presentation Stage (Mathematically scaled to fit viewport) */
+.presentation-stage {
+  position: relative;
+  width: min(100vw, calc(100vh * (16 / 9)));
+  height: min(100vh, calc(100vw * (9 / 16)));
+  aspect-ratio: 16 / 9;
+  background-color: var(--bg-primary);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Terminal Chrome Header */
+.terminal-header {
+  height: 44px;
+  min-height: 44px;
+  background-color: var(--bg-surface);
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  z-index: var(--z-chrome);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+}
+
+.terminal-header-left,
+.terminal-header-center,
+.terminal-header-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.terminal-badge {
+  background-color: rgba(230, 57, 70, 0.15);
+  color: var(--red-accent);
+  padding: 2px 8px;
+  border-radius: 2px;
+  border: 1px solid rgba(230, 57, 70, 0.35);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.terminal-path {
+  color: var(--text-muted);
+}
+
+.terminal-path span {
+  color: var(--text-primary);
+}
+
+/* Main Slides Container (Viewport area for slides) */
+.slides-viewport {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: calc(100% - 94px); /* Leaving space for header (44px) & footer (50px) */
+}
+
+/* Base Slide Container */
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 38px 56px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow: hidden;
+  background: radial-gradient(circle at 85% 15%, rgba(165, 29, 45, 0.07) 0%, transparent 60%),
+              radial-gradient(circle at 15% 85%, rgba(36, 40, 44, 0.25) 0%, transparent 50%),
+              var(--bg-primary);
+}
+
+/* Terminal Chrome Footer */
+.terminal-footer {
+  height: 50px;
+  min-height: 50px;
+  background-color: var(--bg-surface);
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  z-index: var(--z-chrome);
+  font-family: var(--font-mono);
+}
+
+/* Progress Bar (Anchored at the very top of footer) */
+.progress-bar-container {
+  position: absolute;
+  top: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--border-color);
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--red-dark), var(--red-accent));
+  box-shadow: 0 0 8px var(--red-accent);
+  transition: width var(--transition-normal);
+}
+
+/* Common Slide Internal Layouts */
+.slide-header {
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.slide-tag {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--red-accent);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.slide-title {
+  font-family: var(--font-mono);
+  font-size: 2.1rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  margin: 0;
+  line-height: 1.15;
+}
+
+.slide-subtitle {
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.slide-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 0; /* Prevents overflow */
+}
+
+/* Layout Variations */
+/* 1. Cover Layout */
+.layout-cover {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  align-items: center;
+  height: 100%;
+  padding: 20px 40px;
+  gap: 40px;
+}
+
+/* 2. Split Layout (2 Columns) */
+.layout-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  height: 100%;
+  align-items: stretch;
+}
+
+/* 3. Grid Layout (Cards) */
+.layout-grid-2x2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 20px;
+  height: 100%;
+}
+
+.layout-grid-3col {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  height: 100%;
+}
+
+.layout-grid-4col {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  height: 100%;
+}
+
+/* 4. Comparison Columns (Dual vs) */
+.layout-comparison {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  height: 100%;
+}
+
+/* 5. Philosophy / Author Focus Layout */
+.layout-author {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 32px;
+  height: 100%;
+  align-items: center;
+}

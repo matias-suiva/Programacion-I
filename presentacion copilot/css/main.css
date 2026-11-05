@@ -1,0 +1,201 @@
+/* ==========================================================================
+   Main Stylesheet & Reset
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap');
+@import url('./variables.css');
+@import url('./animations.css');
+@import url('./layout.css');
+@import url('./components.css');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+}
+
+/* Custom Minimal Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-surface);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--bg-surface-subtle);
+  border-radius: 3px;
+  border: 1px solid var(--border-color);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--red-dark);
+}
+
+/* Utility Classes */
+.text-mono {
+  font-family: var(--font-mono);
+}
+
+.text-accent {
+  color: var(--red-accent);
+}
+
+.text-muted {
+  color: var(--text-muted);
+}
+
+.text-secondary {
+  color: var(--text-secondary);
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Bibliography List styling */
+.biblio-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  height: 100%;
+}
+
+.biblio-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.biblio-card-title {
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  color: var(--red-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  margin: 0;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 8px;
+}
+
+.biblio-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.biblio-item {
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  line-height: 1.45;
+  padding-left: 14px;
+  position: relative;
+}
+
+.biblio-item::before {
+  content: '>';
+  position: absolute;
+  left: 0;
+  color: var(--red-accent);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+}
+
+.biblio-author {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   Print / PDF Export Styles
+   ========================================================================== */
+
+@media print {
+  @page {
+    size: 16in 9in; /* Or landscape standard */
+    margin: 0;
+  }
+
+  html, body {
+    width: auto !important;
+    height: auto !important;
+    overflow: visible !important;
+    background-color: #08090B !important;
+    color: #E5E5E5 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .app-shell {
+    width: auto !important;
+    height: auto !important;
+    display: block !important;
+    overflow: visible !important;
+    background-color: #08090B !important;
+  }
+
+  .presentation-stage {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: auto !important;
+    box-shadow: none !important;
+    border: none !important;
+    overflow: visible !important;
+    display: block !important;
+  }
+
+  .terminal-header,
+  .terminal-footer,
+  .scanlines-overlay,
+  .vignette-overlay,
+  .overview-modal {
+    display: none !important;
+  }
+
+  .slides-viewport {
+    position: static !important;
+    width: 100% !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  .slide {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    page-break-after: always !important;
+    break-after: page !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    padding: 40px 60px !important;
+    display: flex !important;
+    box-sizing: border-box !important;
+  }
+}
