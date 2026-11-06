@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Mi Primera App Estilizada</title>
+    <!-- Importamos Bootstrap para dar estilos hermosos sin escribir CSS manual -->
+    <link href="https://jsdelivr.net" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container text-center">
+        <div class="card p-5 shadow-lg mx-auto" style="max-width: 500px;">
+            <h1 class="display-5 mb-4">🚀 ¡Spring Boot con Estilo!</h1>
+            <!-- Thymeleaf cambiará este texto dinámicamente con la variable del backend -->
+            <p class="lead" th:text="${mensaje}">Aquí irá el saludo</p>
+            <hr class="my-4 text-white-50">
+            <a href="/hola" class="btn btn-light btn-lg fw-bold text-primary">Volver al Hola Mundo original</a>
+        </div>
+    </div>
+
+</body>
+</html>
